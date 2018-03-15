@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body{padding-top: 20px;padding-left: 44px;}
+	.homework{min-height: 475px;font-size: 18px;}
+	.t{padding: 0px 38px 0px 0px}
+	.edu, .sex, .h{font-size: 16px; color:#707070;}
+	.name{margin: 0;padding: 0;width: 200px;height: 42px;}
+	textarea{margin: 0;padding: 0; width: 300px;height: 84px;}
+	button{width: 120px;height: 42px;margin-left: 80px; background: #d853b7;border: none; font-size: 20px; color: white;}
+	div{margin: 32px;}
+	</style>	
+</head>
+<body>
+<div>
+	<form class="homework">
+		<div>
+			<label for="portrait" class="t">头像</label>
+			<input type="file" id="portrait">	
+		</div>
+		<div>
+			<label for="nickname" class="t">昵称</label>
+			<input type="text" id="nickname" class="name">
+		</div>
+		<div>
+			<label for="education" class="t">学历</label>
+			<select id="education">
+			<option value="0" selected class="edu">大专</option>
+			<option value="1">本科</option>	
+			</select>
+		</div>
+		<div>
+			<label class="t">性别</label> 
+			<input type="radio" name="sex" id="sex_1" value="man" checked><label for="sex_1"  class="sex">男</label>
+			<input type="radio" name="sex" id="sex_2" value="woman"><label for="sex_2" class="sex">女</label>
+		</div>
+		<div>
+			<label class="t">爱好</label> 
+			<input type="checkbox" value="movie" id="rd_0"  checked><label for="rd_0" class="h">电影</label>
+			<input type="checkbox" value="picture" id="rd_1" ><label for="rd_1" class="h">摄影</label>
+			<input type="checkbox" value="music" id="rd_2" ><label for="rd_2" class="h">音乐</label>
+			<input type="checkbox" value="read" id="rd_3"  checked><label for="rd_3" class="h">阅读</label>
+		</div>
+		<div>
+			<label for="autograph" class="t">签名</label>
+			<textarea rows="4" id="autograph"></textarea>
+		</div>
+		<div>
+			<button type="submit">保存</button>
+		</div>
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		if (!window.JSON) {
+    window.JSON = {
+        parse: function(jsonStr) {
+            return eval('(' + jsonStr + ')');
+        },
+        stringify: function(jsonObj) {
+            var result = '',
+                curVal;
+             //如果对象为空
+            if (jsonObj === null) {
+                return String(jsonObj);
+            }
+            //如果对象为空，根据构造函数返回相应内容
+            switch (typeof jsonObj) {
+                case 'number':
+                case 'boolean':
+                    return String(jsonObj);
+                case 'string':
+                    return '"' + jsonObj + '"';
+                case 'undefined':
+                case 'function':
+                    return undefined;
+            }
+            //如果对象非空
+            switch (Object.prototype.toString.call(jsonObj)) {
+            	//对象为数组
+                case '[object Array]':
+                    result += '[';
+                    for (var i = 0, len = jsonObj.length; i < len; i++) {
+                        curVal = JSON.stringify(jsonObj[i]);
+                        result += (curVal === undefined ? null : curVal) + ",";
+                    }
+                    if (result !== '[') {
+                        result = result.slice(0, -1);
+                    }
+                    result += ']';
+                    return result;
+                  //对象为日期
+                case '[object Date]':
+                    return '"' + (jsonObj.toJSON ? jsonObj.toJSON() : jsonObj.toString()) + '"';
+                  //对象为正则表达式
+                case '[object RegExp]':
+                    return "{}";
+                  //对象
+                case '[object Object]':
+                    result += '{';
+                    for (i in jsonObj) {
+                        if (jsonObj.hasOwnProperty(i)) {
+                            curVal = JSON.stringify(jsonObj[i]);
+                            if (curVal !== undefined) {
+                                result += '"' + i + '":' +curVal + ',';
+                            }
+                        }
+                    }
+                    if (result !== '{') {
+                        result = result.slice(0, -1);
+                    }
+                    result += '}';
+                    return result;
+                case '[object String]':
+                    return '"' + jsonObj.toString() + '"';
+                case '[object Number]':
+                case '[object Boolean]':
+                    return jsonObj.toString();
+            }
+        }
+    };
+}
+	</script>
+</body>
+</html>

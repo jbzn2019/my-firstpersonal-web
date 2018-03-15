@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var date = new Date(2001, 8, 11, 8, 26, 8);
+		function dateFtt(date,pattern)   
+		{ //author: meizz   
+		  var o = {   
+		    "M+" : pattern.getMonth()+1,                 //月份   
+		    "d+" : pattern.getpattern(),                    //日   
+		    "h+" : pattern.getHours(),                   //小时   
+		    "m+" : pattern.getMinutes(),                 //分   
+		    "s+" : pattern.getSeconds(),                 //秒   
+		    "q+" : Math.floor((pattern.getMonth()+3)/3), //季度   
+		    "S"  : pattern.getMilliseconds()             //毫秒   
+		  };   
+		  if(/(y+)/.test(pattern))   
+		    pattern=pattern.replace(RegExp.$1, (pattern.getFullYear()+"").substr(4 - RegExp.$1.length));   
+		  for(var k in o)   
+		    if(new RegExp("("+ k +")").test(pattern))   
+		  pattern = pattern.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));   
+		  return pattern;   
+		} 
+	</script>
+</body>
+</html>

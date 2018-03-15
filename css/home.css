@@ -1,0 +1,92 @@
+/*css reset*/
+* {
+    margin: 0;
+    padding: 0
+}
+em,i {
+    font-style: normal
+}
+li {
+    list-style: none
+}
+img {
+    border: 0;
+    vertical-align: middle
+}
+button {
+    cursor: pointer
+}
+a {
+    color: #666;
+    text-decoration: none
+}
+a:hover {
+    color: #c81623
+}
+
+/*页面样式*/
+body{
+	background: #f7f5f6;
+	background-image: url(../img/bg_nest.png);
+	background-repeat: repeat;
+}
+.nav{
+	background: #ffffff;
+	box-shadow: 0px 2px 2px #f9f9f9;
+}
+.img1{
+	display: inline-block;
+}
+.mid1{
+	margin: 0 auto;
+	width: 1200px;
+	height: 80px;
+}
+ul{
+	height: 80px;
+	display: inline-block;
+}
+li{
+	text-align: center;
+	padding-top: 20px;
+}
+.mid2{
+	margin: 0 auto;
+	width: 1200px;
+	height: 500px;
+	background-image: url(../img/barnner1.jpg)
+	/*box-shadow: 0px 2px 2px #999999;*/
+}
+li{
+	display: inline-block;
+}
+span{
+	display: block;
+}
+.barnner{
+	margin: 20px;
+}
+.content{
+	height: 400px;
+	background: #f8f8f8;
+	box-shadow: 0px 2px 2px #999999;
+	border: 1px solid #f9f9f9;
+}
+.main{
+	width: 900px;
+	height:400px;
+	background: #ffffff;
+	float: left;
+}
+.line{
+	width: 700px;
+	height: 1px;
+	background: red;
+	margin-top: 300px;
+}
+.side{
+	width: 280px;
+	height:400px;
+	/*background: #ffffff;*/
+	float: right;
+}
